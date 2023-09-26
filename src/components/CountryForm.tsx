@@ -1,21 +1,33 @@
-import { COUNTRIES_REGEX } from '@/constants/countries';
+import { COUNTRIES_CATEGORY, COUNTRIES_REGEX } from '@/constants/countries';
 import { ICountryFormValue } from '@/types';
+import { useRecoilState } from 'recoil';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import { countriesState } from '@/recoil/countries/atoms';
 
 const CountryForm = () => {
+  const [countries, setCountries] = useRecoilState(countriesState);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     setError,
+    setValue,
   } = useForm<ICountryFormValue>();
 
-  const onValid = (data: ICountryFormValue) => {
-    if(!COUNTRIES_REGEX.test(data.country)) {
-        setError('country', { message: '😥 영문, 숫자만 입력 가능해요. 😥' })
+  const onValid = ({ country }: ICountryFormValue) => {
+    if (!COUNTRIES_REGEX.test(country)) {
+      setError('country', { message: '😥 영문, 숫자만 입력 가능해요. 😥' });
     }
+    setCountries((prev) => [
+      { name: country, category: COUNTRIES_CATEGORY.WISH, id: Date.now() },
+      ...prev,
+    ]);
+    setValue('country', '');
   };
+
+  console.log(countries);
 
   return (
     <Container>

@@ -4,4 +4,4 @@ export const COUNTRIES_CATEGORY = {
   LIKE: 'LIKE',
 } as const;
 
-export const COUNTRIES_REGEX =  /^[ㄱ-ㅎ가-힣a-zA-Z]+$/;
+export const COUNTRIES_REGEX = /^[ㄱ-ㅎ가-힣a-zA-Z]+$/;

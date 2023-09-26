@@ -1,4 +1,4 @@
-import { COUNTRIES_CATEGORY } from "@/constants";
+import { COUNTRIES_CATEGORY } from '@/constants';
 
 export interface ICountryFormValue {
   country: string;
