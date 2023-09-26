@@ -6,7 +6,7 @@ const CountryForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm<ICountryFormValue>();
 
   const onValid = (data: ICountryFormValue) => {

@@ -5,13 +5,5 @@
   "singleQuote": true,
   "trailingComma": "es5",
   "jsxSingleQuote": true,
-  "bracketSpacing": true,
-  "overrides": [
-    {
-      "files": "*.tsx",
-      "options": {
-        "trailingComma": "none"
-      }
-    }
-  ]
+  "bracketSpacing": true
 }
