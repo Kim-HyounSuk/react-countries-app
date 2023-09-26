@@ -1,5 +1,11 @@
+import { CountryForm } from "@/components";
+
 const App = () => {
-  return <>Vite + React + Typescript</>;
+  return (
+    <>
+      <CountryForm />
+    </>
+  );
 };
 
 export default App;
