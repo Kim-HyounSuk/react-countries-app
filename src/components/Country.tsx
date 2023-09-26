@@ -12,19 +12,21 @@ const Country = ({ id, name, category }: ICountry) => {
     setSelect(e.target.value as Category);
     setCountries((prev) => {
       const targetIdx = prev.findIndex((category) => category.id === id);
-      const curCountry = { id, name, category: e.target.value as Category }
+      const curCountry = { id, name, category: e.target.value as Category };
       return [...prev.slice(0, targetIdx), curCountry, ...prev.slice(targetIdx + 1)];
     });
   };
   const onClickHandler = () => {
-    setCountries(prev => prev.filter(country => country.id !== id));
-    };
+    setCountries((prev) => prev.filter((country) => country.id !== id));
+  };
 
   return (
     <Container>
       <span>{name}</span>
       <select value={select} onChange={onChangeHandler}>
-        <option disabled value={select}>{String(category)}</option>
+        <option disabled value={select}>
+          {String(category)}
+        </option>
         {CATEGORIES.filter((CATEGORY) => CATEGORY !== category).map((CATEGORY, idx) => (
           <option key={idx} value={CATEGORY}>
             {CATEGORY}

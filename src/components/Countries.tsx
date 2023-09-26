@@ -5,7 +5,7 @@ import { CountryForm, Country } from '@/components';
 
 const Countries = () => {
   const countries = useRecoilValue(countriesState);
-    console.log(countries);
+  console.log(countries);
   return (
     <Container>
       <CountryForm />
