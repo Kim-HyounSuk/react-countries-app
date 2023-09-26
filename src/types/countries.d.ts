@@ -1,5 +1,3 @@
-import { COUNTRIES_CATEGORY } from '@/constants';
-
 export interface ICountryFormValue {
   country: string;
 }
@@ -7,5 +5,7 @@ export interface ICountryFormValue {
 export interface ICountry {
   id: number;
   name: string;
-  category: keyof typeof COUNTRIES_CATEGORY;
+  category: Category;
 }
+
+export type Category = 'WISH' | 'LIKE' | 'EXPERIENCE';

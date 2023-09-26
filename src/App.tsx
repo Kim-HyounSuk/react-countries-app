@@ -1,9 +1,9 @@
-import { CountryForm } from '@/components';
+import { Countries } from '@/components';
 
 const App = () => {
   return (
     <>
-      <CountryForm />
+      <Countries />
     </>
   );
 };
