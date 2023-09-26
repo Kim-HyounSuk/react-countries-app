@@ -1,3 +1,4 @@
+import { COUNTRIES_REGEX } from '@/constants/countries';
 import { ICountryFormValue } from '@/types';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
@@ -7,10 +8,13 @@ const CountryForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm<ICountryFormValue>();
 
   const onValid = (data: ICountryFormValue) => {
-    console.log(data);
+    if(!COUNTRIES_REGEX.test(data.country)) {
+        setError('country', { message: '😥 영문, 숫자만 입력 가능해요. 😥' })
+    }
   };
 
   return (
