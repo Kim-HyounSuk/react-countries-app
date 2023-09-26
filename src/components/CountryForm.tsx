@@ -16,7 +16,9 @@ const CountryForm = () => {
   } = useForm<ICountryFormValue>();
   const onValid = ({ country }: ICountryFormValue) => {
     if (!COUNTRIES_REGEX.test(country)) {
-      setError('country', { message: '😥 영문, 숫자만 입력 가능해요. 😥' });
+      setError('country', { message: '😥 영문, 한글만 입력 가능해요. 😥' });
+      setValue('country', '');
+      return null;
     }
     setCountries((prev) => [{ name: country, category: 'WISH', id: Date.now() }, ...prev]);
     setValue('country', '');
@@ -34,6 +36,14 @@ const CountryForm = () => {
 };
 
 const Container = styled.div`
+display: flex;
+flex-direction: column;
+gap: 15px;
+span {
+  text-align: center;
+  color: red;
+  width: 100%;
+}
 `;
 
 const Form = styled.form`
