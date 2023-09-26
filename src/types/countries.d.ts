@@ -8,4 +8,8 @@ export interface ICountry {
   category: Category;
 }
 
+export interface ICountriesProps {
+    category: Category;
+}
+
 export type Category = 'WISH' | 'LIKE' | 'EXPERIENCE';

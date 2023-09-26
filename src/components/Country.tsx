@@ -38,6 +38,18 @@ const Country = ({ id, name, category }: ICountry) => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+font-size: 20px;
+padding: 15px;
+gap: 15px;
+span {
+  width: 100%;
+}
+border-bottom: 1px solid ${props => props.theme.btnColor};
+`;
 
 export default Country;
