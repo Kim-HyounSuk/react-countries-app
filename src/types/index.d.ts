@@ -1,1 +1,1 @@
-export * from "@/types/countries";
+export * from '@/types/countries';

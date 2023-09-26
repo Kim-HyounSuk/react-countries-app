@@ -1,4 +1,4 @@
-import { CountryForm } from "@/components";
+import { CountryForm } from '@/components';
 
 const App = () => {
   return (

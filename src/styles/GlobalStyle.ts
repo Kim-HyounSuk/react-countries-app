@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -30,8 +30,8 @@ body {
 	line-height: 1;
 	width: 100%;
 	height: 100%;
-	color: ${props => props.theme.textColor};
-	background-color: ${props => props.theme.bgColor};
+	color: ${(props) => props.theme.textColor};
+	background-color: ${(props) => props.theme.bgColor};
 }
 ol, ul {
 	list-style: none;

@@ -1,3 +1,9 @@
 export interface ICountryFormValue {
-    country: string;
+  country: string;
+}
+
+export interface ICountry {
+  id: number;
+  name: string;
+  category: string;
 }
