@@ -27,7 +27,10 @@ const CountryForm = () => {
   return (
     <Container>
       <Form onSubmit={handleSubmit(onValid)}>
-        <Input {...register('country', { required: '😥 빈칸은 입력할 수 없어요. 😥' })} placeholder='이름' />
+        <Input
+          {...register('country', { required: '😥 빈칸은 입력할 수 없어요. 😥' })}
+          placeholder='이름'
+        />
         <Button>등록</Button>
       </Form>
       {errors?.country && <span>{errors?.country?.message}</span>}
@@ -36,37 +39,37 @@ const CountryForm = () => {
 };
 
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-gap: 15px;
-span {
-  text-align: center;
-  color: red;
-  width: 100%;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  span {
+    text-align: center;
+    color: red;
+    width: 100%;
+  }
 `;
 
 const Form = styled.form`
-display: flex;
-flex-direction: column;
-width: 100%;
-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
 `;
 
 const Input = styled.input`
-padding: 10px;
-border-radius: 10px;
+  padding: 10px;
+  border-radius: 10px;
 `;
 
 const Button = styled.button`
-background-color: ${props => props.theme.btnColor};
-padding: 10px;
-border-radius: 10px;
-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.75);
-&:hover {
-  color: ${props => props.theme.bgColor};
-  background-color: ${props => props.theme.textColor};
-}
+  background-color: ${(props) => props.theme.btnColor};
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.75);
+  &:hover {
+    color: ${(props) => props.theme.bgColor};
+    background-color: ${(props) => props.theme.textColor};
+  }
 `;
 
 export default CountryForm;

@@ -9,7 +9,7 @@ export interface ICountry {
 }
 
 export interface ICountriesProps {
-    category: Category;
+  category: Category;
 }
 
 export type Category = 'WISH' | 'LIKE' | 'EXPERIENCE';
